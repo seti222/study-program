@@ -50,7 +50,7 @@ Backbone 은 자동 바인딩이 아닙니다. 하지만 메뉴얼로 가능한�
 아래 소스가 양 방향 데이타 바인딩을 구현한 예입니다.
 <iframe frameborder="0" height="400" src="http://jsfiddle.net/cmckeachie/7fGrD/embedded/js,html,result/light" width="100%" data-en_id="93344089"></iframe>
 
-모델의 변경 이벤트와 view 그리고 View 에 모델을 가지고 와 그리는 프로퍼티이다. input 의 keyup 이벤트 리슨너 그리고 input 값을 가지고 모델을 변경한다. 하나의 view는 수정할 수 있는 하나의 모델을 가진다. 이 예제로 데이타 바인딩을 하는 방법을 어떻게 하는지 알수 있을 것이다. Backbone 에서 데이타바인딩을 위한 몇개의 플러그인들중에 하나이다. 
+요약하면 모델(person)의 변경 이벤트 발생시 view 그리는 render를 호출하고 화면을 업데이트 합니다. input 의 keyup 이벤트를 감지하여 jQuery를 사용해서 input value를 얻어 모델을 변경하고 이 모델을 가지고 화면을 업데이트 합니다. 이 예제를 통해서 데이타 바인딩을 하는 방법을 어떻게 하는지 느낄 수 있을 것입니다. Backbone의 데이타 바인딩을 위한 수많은 플러그인이 있다는 것을 주목할 필요가 있습니다. 
 
 ###Ember Exmaple
 
@@ -61,7 +61,7 @@ Ember는 흔히 Handlebars 템플릿을 사용합니다만 "input helpers"를 �
 
 ##Templates/Views
 
-Templates은 Html 페이지입니다. 다이나믹한 데이타을 포함한 표현식을 포함한 데이타 바인딩을 가진 Html의 작은 부분이기도 합니다. 화면에 로직이 적게하거나 없애는 것이 템플릿의 철학입니다. 템플릿에서 자바스크립트를 직업 포함하기도 합니다. 템플릿은 DOM 기반으로 하거나 다이나믹한 데이타를 DOM에서 삽입하여 사용하거나 문자열 기반으로 한다(동적인 부분의 문자열을 변경하거나 html 문자열로 취급한다.)
+Templates은 Html 페이지입니다. 다이나믹한 데이타을 포함한 표현식을 포함한 데이타 바인딩을 가진 Html의 작은 부분이기도 합니다. 화면에 로직이 적게하거나 없애는 것이 템플릿의 철학입니다. 템플릿에서 자바스크립트를 직업 포함하기도 합니다. 템플릿은 DOM 기반으로 하거나 다이나믹한 데이타를 DOM에서 삽입하여 사용하거나 문자열 기반으로 합니다.(동적인 부분의 문자열을 변경하거나 html 문자열로 취급.)
 
 예제를 통해서 알아봅시다.
 
@@ -71,7 +71,7 @@ Templates은 Html 페이지입니다. 다이나믹한 데이타을 포함한 표
 
 <iframe frameborder="0" height="400" src="http://jsfiddle.net/cmckeachie/aq676/embedded/js,html,result/light" width="100%"></iframe>
 
-이전의 라이팅 예제에 데이타바인딩을 더해서 템플릿을 어떻게 하는지 간단하게 살펴 볼수 있다. Html 의 ==Script== 태그를 사용해서 템플릿을 포함하는 jsfiddle.net 에서 쉽게 볼수 있다. 하지만 AngularJS 에서는 ==$routeProvider== 의 설정에 따라서 유효한 파일 경로인 ==templateUrl== 프로퍼티 값에 따라서 외부의 view를 사용할 수 있다.
+이전의 routing 예제에 데이타바인딩을 더해서 템플릿을 어떻게 하는지 간단히 살펴 볼수 있습니다. Html 의 ==Script== 태그를 사용해서 템플릿을 포함하는 jsfiddle.net 에서 쉽게 볼수 있습니다. 하지만 AngularJS 에서는 ==$routeProvider== 의 설정에 따라서 유효한 파일 경로인 ==templateUrl== 프로퍼티 값에 따라서 외부의 view를 사용할 수도 있습니다.
 
 큰 규모의 어플리케이션에서 템플릿을 사용하는 방법처리하는 것은 좋은 방법으로 [grunt-angular-templates](https://www.npmjs.com/package/grunt-angular-templates)를 사용해서 컴파일 타임시에 Angular ==$templateCache== 에 연결하고 등록하는 것입니다.
 
